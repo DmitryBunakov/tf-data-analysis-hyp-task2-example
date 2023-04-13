@@ -9,5 +9,5 @@ def solution(x: np.array, y: np.array) -> bool:
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
     alpha = 0.03
-    p_val = stats.anderson_ksamp([x, y])[2]
+    p_val = stats.cramervonmises_2samp(x, y).pvalue
     return True if p_val <= alpha else False # Ваш ответ, True или False
